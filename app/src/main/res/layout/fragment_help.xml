@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#212121">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Followed Artists: "
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:lineSpacingExtra="10dp"
+            android:scrollbars="vertical"/>
+
+        <Button
+            android:id="@+id/rate"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/pill"
+            android:text="Rate Us"
+            android:textColor="#fff"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/donate"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/pill"
+            android:text="Support this project"
+            android:textColor="#fff"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+</ScrollView>
