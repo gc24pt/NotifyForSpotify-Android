@@ -110,14 +110,16 @@ public class NewsFragment extends Fragment {
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
                         try {
-                            final JSONObject jsonObject = new JSONObject(response.body().string());
-                            final Paging<AlbumSimplified> albumSimplifiedPaging = rExecute(jsonObject.toString());
-                            AlbumSimplified[] albums = albumSimplifiedPaging.getItems();
-                            dataHandler(albums, id);
-                            if(musician.hasNews()) {
-                                Musician musician1 = musician.clone();
-                                user.addLN(musician1);
-                                musician.news();
+                            if(response.code() == 200) {
+                                final JSONObject jsonObject = new JSONObject(response.body().string());
+                                final Paging<AlbumSimplified> albumSimplifiedPaging = rExecute(jsonObject.toString());
+                                AlbumSimplified[] albums = albumSimplifiedPaging.getItems();
+                                dataHandler(albums, id);
+                                if (musician.hasNews()) {
+                                    Musician musician1 = musician.clone();
+                                    user.addLN(musician1);
+                                    musician.news();
+                                }
                             }
                             countDownLatch.countDown();
                         } catch (JSONException e) {

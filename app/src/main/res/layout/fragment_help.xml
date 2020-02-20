@@ -24,23 +24,12 @@
             android:scrollbars="vertical"/>
 
         <Button
-            android:id="@+id/rate"
-            android:layout_width="100dp"
+            android:id="@+id/clear"
+            android:layout_width="120dp"
             android:layout_height="30dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="35dp"
             android:background="@drawable/pill"
-            android:text="Rate Us"
-            android:textColor="#fff"
-            android:textSize="15sp"/>
-
-        <Button
-            android:id="@+id/donate"
-            android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="25dp"
-            android:background="@drawable/pill"
-            android:text="Support this project"
+            android:text="Clear News"
             android:textColor="#fff"
             android:textSize="15sp"/>
     </LinearLayout>

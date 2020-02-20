@@ -225,10 +225,12 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
                         try {
-                            final JSONObject jsonObject = new JSONObject(response.body().string());
-                            final Paging<AlbumSimplified> albumSimplifiedPaging = rExecute(jsonObject.toString());
-                            AlbumSimplified[] albums = albumSimplifiedPaging.getItems();
-                            dataHandler(albums, id);
+                            if(response.code() == 200) {
+                                final JSONObject jsonObject = new JSONObject(response.body().string());
+                                final Paging<AlbumSimplified> albumSimplifiedPaging = rExecute(jsonObject.toString());
+                                AlbumSimplified[] albums = albumSimplifiedPaging.getItems();
+                                dataHandler(albums, id);
+                            }
                             countDownLatch.countDown();
                         } catch (JSONException e) {
                             System.out.println("Failed to parse data: " + e);

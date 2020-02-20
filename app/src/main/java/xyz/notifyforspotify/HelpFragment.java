@@ -31,21 +31,12 @@ public class HelpFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         infoPrinter();
 
-        Button rButton = getView().findViewById(R.id.rate);
-        rButton.setOnClickListener(new View.OnClickListener() {
+        Button cButton = getView().findViewById(R.id.clear);
+        cButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getActivity().getPackageName()));
-                startActivity(browser);
-            }
-        });
-
-        Button dButton = getView().findViewById(R.id.donate);
-        dButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.notifyforspotify.xyz/"));
-                startActivity(browser);
+                User user = ((MainActivity)getActivity()).getUser();
+                user.clearNews();
             }
         });
     }

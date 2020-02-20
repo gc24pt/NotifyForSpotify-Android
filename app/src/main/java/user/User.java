@@ -13,7 +13,7 @@ public class User implements Serializable {
 
     public User() {
         resetMap();
-        latestNews = new SizedStackClass<>(10);
+        latestNews = new SizedStackClass<>(15);
     }
 
     public void resetMap() {
@@ -46,5 +46,9 @@ public class User implements Serializable {
 
     public int aNum() {
         return map.size();
+    }
+
+    public void clearNews() {
+        latestNews.clear();
     }
 }
